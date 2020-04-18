@@ -1,23 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import {Component, Input} from "@angular/core";
 
-import { Item } from "./item";
-import { ItemService } from "./item.service";
+import {Item} from "./item";
 
 @Component({
-    selector: "ns-details",
-    templateUrl: "./item-detail.component.html"
+    selector: "item-detail",
+    template: `
+        <GridLayout columns="*, auto">
+            <Label col="0" [text]="item.name"></Label>
+            <Label col="1" [text]="item.role"></Label>
+        </GridLayout>
+    `
 })
-export class ItemDetailComponent implements OnInit {
-    item: Item;
-
-    constructor(
-        private itemService: ItemService,
-        private route: ActivatedRoute
-    ) { }
-
-    ngOnInit(): void {
-        const id = +this.route.snapshot.params.id;
-        this.item = this.itemService.getItem(id);
-    }
+export class ItemDetailComponent {
+    @Input() item: Item;
 }

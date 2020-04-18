@@ -1,14 +1,13 @@
-import { NgModule } from "@angular/core";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { Routes } from "@angular/router";
-
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
+import {NgModule} from "@angular/core";
+import {NativeScriptRouterModule} from "nativescript-angular/router";
+import {Routes} from "@angular/router";
+import {ScenariosPageComponent} from '~/app/pages/scenarios-page.component';
+import {DualListPageComponent} from '~/app/pages/dual-list-page.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "/items", pathMatch: "full" },
-    { path: "items", component: ItemsComponent },
-    { path: "item/:id", component: ItemDetailComponent }
+    { path: "", redirectTo: "/scenarios", pathMatch: "full" },
+    { path: "scenarios", component: ScenariosPageComponent },
+    { path: "dual-list", component: DualListPageComponent },
 ];
 
 @NgModule({

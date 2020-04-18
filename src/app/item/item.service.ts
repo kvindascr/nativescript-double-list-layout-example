@@ -28,14 +28,29 @@ export class ItemService {
         { id: 22, name: "Aleix Vidal", role: "Midfielder" },
         { id: 23, name: "Umtiti", role: "Defender" },
         { id: 24, name: "Mathieu", role: "Defender" },
-        { id: 25, name: "Masip", role: "Goalkeeper" }
+        { id: 25, name: "Masip", role: "Goalkeeper" },
+        { id: 26, name: "Thomas Partey", role: "Midfielder" },
+        { id: 27, name: "Moussa Dembele", role: "Forward" },
+        { id: 28, name: "Kieren Trippier", role: "Defender" },
+        { id: 29, name: "Romelu Lukaku", role: "Forward" },
+        { id: 30, name: "Ricardo Pereira", role: "Defender" },
+        { id: 31, name: "Julian Brandt", role: "Midfielder" },
     );
 
-    getItems(): Array<Item> {
+    getItems(): Item[] {
         return this.items;
     }
 
     getItem(id: number): Item {
         return this.items.filter((item) => item.id === id)[0];
+    }
+
+    getRecommendedItems(){
+        return this.items.slice(0, 20);
+    }
+
+    searchItems(search: string): Item[] {
+        const searchLower = search.toLowerCase();
+        return this.items.filter(item => item.name.toLowerCase().includes(searchLower) || item.role.toLowerCase().includes(searchLower));
     }
 }
