@@ -4,10 +4,9 @@ import {Component} from '@angular/core';
     selector: "ns-app",
     template: `
         <StackLayout>
-            <Label text="Scenarios" fontSize="30" textAlignment="center" ></Label>
+            <Label text="Scenarios" class="h2" textAlignment="center" ></Label>
             <Button [nsRouterLink]="'/dual-list'" class="-primary -rounded" text="Double List" ></Button>
-            <Button [nsRouterLink]="'/dual-list'" class="-primary -rounded" text="Render List with one list populated" ></Button>
-            <Button [nsRouterLink]="'/dual-list'" class="-primary -rounded" text="Render List with two list populated" ></Button>
+            <Button [nsRouterLink]="'/render-list'" class="-primary -rounded" text="Render List" ></Button>
         </StackLayout>
     `
 })

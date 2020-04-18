@@ -1,16 +1,14 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
 import {ScenariosPageComponent} from '~/app/pages/scenarios-page.component';
 import {DualListPageComponent} from '~/app/pages/dual-list-page.component';
+import {RenderListPageComponent} from '~/app/pages/render-list-page.component';
 
-// Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import {ItemDetailComponent} from '~/app/item/item-detail.component';
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
@@ -27,8 +25,8 @@ import {DualListPageComponent} from '~/app/pages/dual-list-page.component';
     declarations: [
         AppComponent,
         DualListPageComponent,
-        ItemsComponent,
         ItemDetailComponent,
+        RenderListPageComponent,
         ScenariosPageComponent,
     ],
     providers: [],
